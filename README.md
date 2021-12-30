@@ -38,3 +38,6 @@ A track is chronologically ordered set of track points. Unlike the route which c
 
 ### How Strava Records GPX Files
 It is worth noting that Strava .gpx files seem to only ever contain 1 track segment. Strava has a auto-pause feature, which stops recording data when you aren't moving. This is useful for not only conserving phone battery but ultimately representing your bike ride's moving time and average speed more accurately. According to the definition of a *track segement*, we would expect multiple segments whenever this happened in the trip. Perhaps, Strava combines these multiple segments into just 1 after uploading.
+
+## 3. Loading GPX Data into Pandas
+Since the .gpx format is essentially XML, we could use a python XML library to parse the nodes, but luckily there is a simple alternative purpose built for this called `gpxpy`. To install the package, use `pip install gpxpy` or your enviroment's relevant package manager.
