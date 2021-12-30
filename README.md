@@ -1,6 +1,6 @@
 # Strava Cycling EDA
 
-This Python repository covers the Exploratory Data Analysis (EDA) for a single bike ride recorded by Strava.
+This Python repository covers the Exploratory Data Analysis (EDA) for 3 bike rides recorded by Strava. I've chosen to analyze only 3 rides so that the differences among them can be explored without worrying about the other 250+ rides of data.
 
 EDA will cover the following areas:
 
@@ -26,4 +26,4 @@ In order to access the ride data from Strava, do the following:
 
 ## 2. What is a GPX File?
 
-Great, we just downloaded a .gpx file, but what exactly is it?
+Great, we just downloaded a .gpx file, but what exactly is it? The 
