@@ -8,3 +8,5 @@ EDA will cover the following areas:
 - Loading .gpx files into a Pandas dataframe
 - Common enrichments needed to enhance the usefulness of the base data
 - Data quality concerns
+
+A brief data dictionary will be provided as well.
