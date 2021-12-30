@@ -23,3 +23,7 @@ In order to access the ride data from Strava, do the following:
 3. Find a ride that interests you and click on it. If you want to share the data for that ride, it is recommended to choose a ride that doesn't start or end at your current residence (or any previous). 
 4. Underneath the overview there is a box with an ellipsis icon (...). Click that and then hit "Export GPX" to download the data for that ride <br> ![](images/export_gpx.png)
 5. Move the .gpx file to the directory you'll be working in
+
+## 2. What is a GPX File?
+
+Great, we just downloaded a .gpx file, but what exactly is it?
