@@ -47,6 +47,19 @@ Exploratory Data Analysis sometimes feels like going into an unknown forest to e
 
 In lucky cases, you are given a data dictionary. This serves as a field guide that describes the purpose of each species/column within the data forest. In our case, Strava does not publish a data dictionary for its .gpx downloads, however, each column seems is easy to understand. We'll make our own field guide:
 
-- 
+- :evergreen_tree: `track` (*int*) = a locally unique^1 ID for a GPX track within a ride's data. _Derived column_
+- :evergreen_tree: `segment` (*int*) = a locally unique^1 ID for a GPX segment within a GPX track. _Derived column_
+- :palm_tree: `time` (*datetime*) = the naive^2 timestamp that states when the row was recorded.
+- :deciduous_tree: `elevation` (*float*) = the elevation of the user in feet.
+- :deciduous_tree: `longitude` (*float*) = the longitude of the user in degrees.
+- :deciduous_tree: `latitude` (*float*) = the latitude of the user in degrees
+
+The first two columns are essentially trees we planted in the .csv version of the ride data. They may not be useful in the future, but we can keep them for now to see if there is a difference across many files. 
+
+:white_check_mark: **Tip:** keep track of all explicit questions that arise when looking at the data. These will be the primary search paths you can use during EDA to explore and map your data forest.
+
+:heavy_exclamation_mark: **Warning:** when possible, write down any assumptions you have about the data. These are implicit thoughts about your data so it may not always be easy to catch them. Validating assumptions is critical to shoring up the foundation of any work built upon them.
+
+:palm_tree: `time`
 
 Maybe you have a data dictionary to help, maybe you don't. 
