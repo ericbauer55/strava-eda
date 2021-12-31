@@ -97,7 +97,7 @@ Unless you are designing the data capture process--perhaps you are making a Rasp
 #### Synchronous vs. Asynchronous Time Samples
 Once we agree on a time scale of interest and an origin/start, our data model must decide _when_ it should record the physical state of the system. Of course we must sample discrete points in time, but we are not required or guaranteed to have a consistent sampling frequency. If we sample in synch with a single sampling frequency, our data points are **synchronous** and our data is a **time series**. 
 
-If the data is only recorded when certain events occur, our data points are **asynchronous** and is an **event series**. Take the following graph of a car's headlamp state for example: <br>[](images/synch_v_asynch.PNG) 
+If the data is only recorded when certain events occur, our data points are **asynchronous** and is an **event series**. Take the following graph of a car's headlamp state for example: <br>![](images/synch_v_asynch.PNG) 
 
 The light blue line represents the continuous state of headlamps. We cannot take infinite samples, so we will have to record the data discretely. We could create a discrete timeseries, as represented by the blue dots. By doing so, we would store 8 rows of data to represent the 3 different states. Because the state changes so slowly, 5 out of the 8 rows contain redundant information. Instead of synchronous samples, we could record when a state change happens. This event-based approach is asynchronous since the state changes there is not a finite frequency able to record exactly when each change occurs. Instead we could store the initial state of the headlamps and only add 2 rows representing each change and when it happened. 
 
@@ -108,7 +108,7 @@ Constructing a time series from an event series is often trickier. For example, 
 Event series are perfectly useful, however. An E-commerce website typically has no need to record every mouse movement (unless evaluating a new UX design). Recording the customer's screen state every second could generate a lot of useless data. Instead, recording what website a user came from, and the sequence of events from log-in to cart to purchase is a lot more useful.
 
 #### Strava's Model of Time
-We can see from the first couple of rows of the `time` column, that the timestamps are recorded with date (year, month, day) and time information as granular as seconds: <br>[](images/time_glance.PNG)
+We can see from the first couple of rows of the `time` column, that the timestamps are recorded with date (year, month, day) and time information as granular as seconds: <br>![](images/time_glance.PNG)
 
 The time intervals between rows seem to either be 1 second or 2 seconds. So even if our data are discrete points in time, they are not quite synchronous. This is something we will need to fix since we want to deal with a time series.
 
