@@ -117,7 +117,7 @@ With nearly 20 questions and assumptions to explore, it seems like a good idea t
 
 To prioritize each question and assumption, we can assign each a relative "impact" and "feasibility". The impact of a question is related to how much insight the data can unlock if answered. For assumptions, impact is how high (or low) of a risk the assumption presents to future analysis should it be proved false later. In either case, the estimations of impact are arbitrary, but based on instinct. You can get better at gauging impact the more you explore data. The feasibility of a question or assumption is more tangible--though still relative. How much time will it take to fully investigate that item? Low feasibility items require much more time and effort to investigate. 
 
-Items high in impact and feasibility are called "**No Brainers**". Do these first. Past a certain point if the effort to too high, or the impact too low, that item might be an "**Explore Later**". These are nice-to-haves. If the feasibility and impact are both low, then you probably don't need to address it now unless it this evaluation changes later. For a first pass at EDA, select all of the "**No Brainers**"" and a few important "**Expore Laters**". 
+Items high in impact and feasibility are called "**No Brainers**". Do these first. Past a certain point if the effort is too high, or the impact too low, that item might be an "**Explore Later**". These are nice-to-haves. If the feasibility and impact are both low, then you probably don't need to address it now unless it this evaluation changes later. For a first pass at EDA, select all of the "**No Brainers**"" and a few important "**Expore Laters**". 
 
 I've attempted to prioritize my questions and assumptions here:
 
@@ -125,5 +125,9 @@ _Placeholder_: 1/x curves for Impact vs. Effort and the regions of "no brainers"
 
 ### Project Directory Structure:
 
-Staying organized both with the various data files, exploration notebooks and supporting tools is important. A repeatable project directory structure will help streamline each adventure too.
+Staying organized both with the various data files, exploration notebooks and supporting tools is important. A repeatable project directory structure will help streamline each adventure too. I've created Data Science project template, which can be viewed [here](https://github.com/ericbauer55/Data_Science_Project_Template).
+
+Essentially you want a place to organize the various stages of your data; the exploration notebooks; any helper source code and many other items.
+
+
 
