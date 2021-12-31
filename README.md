@@ -121,7 +121,7 @@ Items high in impact and feasibility are called "**No Brainers**". Do these firs
 
 I've attempted to prioritize my questions and assumptions here:
 
-_Placeholder_: 1/x curves for Impact vs. Effort and the regions of "no brainers", "do laters" and "do not dos"
+_Placeholder_: 1/x curves for Impact vs. Effort and the regions of "no brainers", "do laters" and "do not dos" <br>![](images/placeholder.PNG)
 
 ### Project Directory Structure:
 
