@@ -87,15 +87,43 @@ The timescale of seconds is perfectly reasonably, though. As a bike rider with h
 The initial questions and assumptions form the start of the data adventure. These will guide where to look in the data forest and will check risks for any danger later on. I'll start by listing my initial questions
 
 #### Questions
-
+1. :question: (*Data Quality*) What is the sparsity of each column?
+2. :question: (*Data Quality*) Are there any outliers in each column?
+3. :question: For categorical or ID columns (`track`,`segment`), how many unique values are there?
+4. :question: How can we determine speed from the available columns?
+5. :question: How can we summarize a ride similar to Strava?:
+- Elapsed time & moving time
+- Average speed
+- Elapsed distance & elevation gain/fall
+6. :question: Discounting stops/starts, how can we determine the "moving average speed" of a trip?
+7. :question: How can we determine the "continuity" ride by factoring in stops and starts?
+8. :question: How can we associate out-and-back trips recorded in different Strava uploads? Should we? 
+9. :question: How can we enrich the ride's summary with weather data?
+10. :question: How can we determine what percent of a ride is at night?
+11. :question: How can we assign a unique trip/ride ID to each file?
+12. :question: How can we determine grade/slope from `elevation` data?
+13. :question: How can we ensure privacy on route data which contains home addresses?
+14. :question: How can we create segments similar to Strava? How do we store them?
+15. :question: How can we assess relative performance on key segments?
 
 #### Assumptions
-
+1. :exclamation: The units of `elevation` are in feet, not meters or some other unit.
+2. :exclamation: The units of `latitude`/`longitude` are in degrees, not a "degrees,minutes,seconds" format.
+3. :exclamation: The `time` column is mostly synchronous with gaps between samples no more than 2 seconds.
+4. :exclamation: We can ensure privacy while maintaining integrity in the summary w.r.t distance and time.
 
 #### Prioritizing the Places to Explore
+With nearly 20 questions and assumptions to explore, it seems like a good idea to plan the starting point for our adventure and exploration. Not all questions or assumptions are equal. Some are more difficult to answer or address. For instance, enriching a trip's summary with weather data will require integration with an external API. Verifying that units of `elevation` is much easier, however.
+
+To prioritize each question and assumption, we can assign each a relative "impact" and "feasibility". The impact of a question is related to how much insight the data can unlock if answered. For assumptions, impact is how high (or low) of a risk the assumption presents to future analysis should it be proved false later. In either case, the estimations of impact are arbitrary, but based on instinct. You can get better at gauging impact the more you explore data. The feasibility of a question or assumption is more tangible--though still relative. How much time will it take to fully investigate that item? Low feasibility items require much more time and effort to investigate. 
+
+Items high in impact and feasibility are called "**No Brainers**". Do these first. Past a certain point if the effort to too high, or the impact too low, that item might be an "**Explore Later**". These are nice-to-haves. If the feasibility and impact are both low, then you probably don't need to address it now unless it this evaluation changes later. For a first pass at EDA, select all of the "**No Brainers**"" and a few important "**Expore Laters**". 
+
+I've attempted to prioritize my questions and assumptions here:
 
 _Placeholder_: 1/x curves for Impact vs. Effort and the regions of "no brainers", "do laters" and "do not dos"
 
 ### Project Directory Structure:
 
 Staying organized both with the various data files, exploration notebooks and supporting tools is important. A repeatable project directory structure will help streamline each adventure too.
+
