@@ -45,6 +45,8 @@ Since the .gpx format is essentially XML, we could use a python XML library to p
 ## 4. Planning an EDA Project
 Exploratory Data Analysis sometimes feels like going into an unknown forest to explore. At some times it feels exciting, but in others, EDA can be scary--often inducing data vertigo. Although our dataset from step #3 is only 6 columns and ~8,300 rows, many others can be a hundred (or more!) columns and hundreds of thousands rows (and certainly more!). I like to imagine that my unknown forest is made up of many trees from across my various files. Each tree is as tall is as its rows and as healthy-looking as its data quality--free of missing leaves or outlier burls. The 6 columns in the dataset represent 6 unique species of trees in our data forest. Each species has its own characteristics such as data type, units, and its relationship to other species. A entangled analogy, perhaps, but stay with me! Each data forest represents an exciting adventure and it makes the arduous "Understanding" phase more enjoyable to plan with such analogies in mind.
 
+### Data Dictionary:
+
 In lucky cases, you are given a data dictionary. This serves as a field guide that describes the purpose of each species/column within the data forest. In our case, Strava does not publish a data dictionary for its .gpx downloads, however, each column seems is easy to understand. We'll make our own field guide:
 
 - :evergreen_tree: `track` (*int*) = a locally unique^1^ ID for a GPX track within a ride's data. _Derived column_
@@ -63,6 +65,18 @@ The first two columns are essentially trees we planted in the .csv version of th
 
 :heavy_exclamation_mark: **Warning:** when possible, write down any assumptions you have about the data. These are implicit thoughts about your data so it may not always be easy to catch them. Validating assumptions is critical to shoring up the foundation of any work built upon them.
 
-:palm_tree: `time`
+### Modeling _Time_ in Data:
 
-Maybe you have a data dictionary to help, maybe you don't. 
+The data Strava records is meant to model reality. Location for example is estimated using three numbers of finite precision (`elevation`, `latitude`, `longitude`). The _"when"_ of something occurring is modeled by time. We all have a general sense of what time _is_. Time is always increasing and we often count it in days, hours, minutes or seconds. How we record time numerically--and how often--depends on our needs. Let's examine these different needs through the lens of an Electric Vehicle.
+
+**Time Scales of Interest:**
+- Years: a customer needs a new car and decides to lease an electric vehicle at Company X. Marketing and Sales care about this buying cycle in years
+- Months: the customer needs to know how many months left are in their vehicle's lease
+- Days: a grocery store wants to know how many days on average the customer takes between shopping trips to better plan its EV charger infrastructure
+- Hours: the customer wants to know how long their vehicle will take to charge at their home given their current State of Charge and charger power
+- Minutes: the customer wants to know how many minutes driving to the store will take
+- Seconds: the customer wants to know how many seconds it takes to get from 0 to 60 MPH before choosing to lease the vehicle
+- Milliseconds: the customer and vehicle design team care how long the car takes to start and its systems to boot up
+- Microseconds: past this level, the customer doesn't care since the scale is disconnected from their driving experience. The powertrain design team care about the inverter control loop delay in microseconds since a good control loop will ensure the 0 to 60 MPH eletric motor response meets customer expectations
+- Nanoseconds: the power module designers for the inverter care about the "reverse recovery time" of the diodes since this contributes to thermal designs and control loop limitations
+- Picoseconds: representing one trillionth of a second, this time scale is not relevant to the vehicles designers, except to research scientists working on fundamental research questions
