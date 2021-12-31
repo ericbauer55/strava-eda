@@ -113,3 +113,21 @@ We can see from the first couple of rows of the `time` column, that the timestam
 The time intervals between rows seem to either be 1 second or 2 seconds. So even if our data are discrete points in time, they are not quite synchronous. This is something we will need to fix since we want to deal with a time series.
 
 The timescale of seconds is perfectly reasonably, though. As a bike rider with human limits, any motions I make can be described with enough detail at this timescale. The "origin" or timezone for the timestamps are naive and otherwise unclear. As the person generating the data, I can say that it is created in the Eastern timezone. Since I will only be comparing my trips, these naive timestamps are fine. It may be necessary to adjust for daylight savings in the future though. The question of when "night" begins/ends is related to this information, but perhaps we can find these historical sunsets/rises with an API.
+
+### Questions & Assumptions:
+
+The initial questions and assumptions form the start of the data adventure. These will guide where to look in the data forest and will check risks for any danger later on. I'll start by listing my initial questions
+
+#### Questions
+
+
+#### Assumptions
+
+
+#### Prioritizing the Places to Explore
+
+_Placeholder_: 1/x curves for Impact vs. Effort and the regions of "no brainers", "do laters" and "do not dos"
+
+### Project Directory Structure:
+
+Staying organized both with the various data files, exploration notebooks and supporting tools is important. A repeatable project directory structure will help streamline each adventure too.
