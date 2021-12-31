@@ -94,9 +94,13 @@ The continuous red trace of Speed vs. Time shows us there is more detail than ca
 
 Unless you are designing the data capture process--perhaps you are making a Raspberry Pi weatherstation--you may be stuck with the sampling rate of the data provider. We will need to check what that is for Strava data.
 
-#### Synchronous vs. Synchronous Time Samples
+#### Synchronous vs. Asynchronous Time Samples
 Once we agree on a time scale of interest and an origin/start, our data model must decide _when_ it should record the physical state of the system. Of course we must sample discrete points in time, but we are not required or guaranteed to have a consistent sampling frequency. If we sample in synch with a single sampling frequency, our data points are **synchronous** and our data is a **time series**. 
 
 If the data is only recorded when certain events occur, our data points are **asynchronous** and is an **event series**. Take the following graph of a car's headlamp state for example: <br>[](images/synch_v_asynch.PNG) 
 
-The light blue line represents the continuous state of headlamps. We cannot take infinite samples, so 
+The light blue line represents the continuous state of headlamps. We cannot take infinite samples, so we will have to record the data discretely. We could create a discrete timeseries, as represented by the blue dots. By doing so, we would store 8 rows of data to represent the 3 different states. Because the state changes so slowly, 5 out of the 8 rows contain redundant information. Instead of synchronous samples, we could record when a state change happens. This event-based approach is asynchronous since the state changes there is not a finite frequency able to record exactly when each change occurs. Instead we could store the initial state of the headlamps and only add 2 rows representing each change and when it happened. 
+
+Although an event series for the headlamp may store less redudant data, other signals for a car may require synchronous samples (e.g. speed). Even if the data is collected as a time series, it may be better to analyze certain events as an event series. For most reasonable sampling frequencies, turning a time series --> event series is relatively easy. The error you introduce from this transformation is that you is bounded between $[0, T_s/2]$ where $T_s$ is the time between samples. This error represents that you don't know exactly when the event occurred, just that it occurred between two successive samples.
+
+Constructing a time series from an event series is often trickier. For example, if we only recorded a vehicle's speed when the headlamp status changed, we might have long periods of time between samples. Trying to guess what happened to speed could be almost as bad as sampling the speed annually. 
