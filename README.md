@@ -81,3 +81,14 @@ The data Strava records is meant to model reality. Location for example is estim
 - **Microseconds**: past this level, the customer doesn't care since the scale is disconnected from their driving experience. The powertrain design team care about the inverter control loop delay in microseconds since a good control loop will ensure the 0 to 60 MPH eletric motor response meets customer expectations
 - **Nanoseconds**: the power module designers for the inverter care about the "reverse recovery time" of the diodes since this contributes to thermal designs and control loop limitations
 - **Picoseconds**: representing one trillionth of a second, this time scale is not relevant to the vehicles designers, except to research scientists working on fundamental research questions
+
+#### Time Differences
+In the electric vehicle example above, all of the time scales were related to a single entity and time differences are "self-contained". This means that there is no confusion as to when the "start" is. This is not always the case with time, however. A simple example is the flights leaving and departing an airport. Timezones can be easily crossed, so the representation of time matters significantly. You would be surprised to see a flight as taking 0 hours if their systems compared 10:00 AM at the start to 10:00 AM at the end, ignoring timezones. 
+
+If you are trying to run an e-commerce website, then knowing the customers' timezones is important to track busy times on the site. In either the airport of e-commerce examples, setting a common origin for all time measurements is important. Otherwise, the true trends can be masked or distorted by hidden offsets.
+
+### Discrete vs. Continuous Time Representations
+Regardless of scale and origin, _how often_ we capture data is often a choice made for us. Time is always increasing, and we could try to measure it continuously 
+
+#### Discrete vs. Continuous Time Representations
+Once we agree on a time scale of interest and an origin/start, our data model must decide how often it should record the physical state of the system. 
