@@ -69,14 +69,14 @@ The first two columns are essentially trees we planted in the .csv version of th
 
 The data Strava records is meant to model reality. Location for example is estimated using three numbers of finite precision (`elevation`, `latitude`, `longitude`). The _"when"_ of something occurring is modeled by time. We all have a general sense of what time _is_. Time is always increasing and we often count it in days, hours, minutes or seconds. How we record time numerically--and how often--depends on our needs. Let's examine these different needs through the lens of an Electric Vehicle.
 
-**Time Scales of Interest:**
-- Years: a customer needs a new car and decides to lease an electric vehicle at Company X. Marketing and Sales care about this buying cycle in years
-- Months: the customer needs to know how many months left are in their vehicle's lease
-- Days: a grocery store wants to know how many days on average the customer takes between shopping trips to better plan its EV charger infrastructure
-- Hours: the customer wants to know how long their vehicle will take to charge at their home given their current State of Charge and charger power
-- Minutes: the customer wants to know how many minutes driving to the store will take
-- Seconds: the customer wants to know how many seconds it takes to get from 0 to 60 MPH before choosing to lease the vehicle
-- Milliseconds: the customer and vehicle design team care how long the car takes to start and its systems to boot up
-- Microseconds: past this level, the customer doesn't care since the scale is disconnected from their driving experience. The powertrain design team care about the inverter control loop delay in microseconds since a good control loop will ensure the 0 to 60 MPH eletric motor response meets customer expectations
-- Nanoseconds: the power module designers for the inverter care about the "reverse recovery time" of the diodes since this contributes to thermal designs and control loop limitations
-- Picoseconds: representing one trillionth of a second, this time scale is not relevant to the vehicles designers, except to research scientists working on fundamental research questions
+#### Time Scales of Interest
+- **Years**: a customer needs a new car and decides to lease an electric vehicle at Company X. Marketing and Sales care about this buying cycle in years
+- **Months**: the customer needs to know how many months left are in their vehicle's lease
+- **Days**: a grocery store wants to know how many days on average the customer takes between shopping trips to better plan its EV charger infrastructure
+- **Hours**: the customer wants to know how long their vehicle will take to charge at their home given their current State of Charge and charger power
+- **Minutes**: the customer wants to know how many minutes driving to the store will take
+- **Seconds**: the customer wants to know how many seconds it takes to get from 0 to 60 MPH before choosing to lease the vehicle
+- **Milliseconds**: the customer and vehicle design team care how long the car takes to start and its systems to boot up
+- **Microseconds**: past this level, the customer doesn't care since the scale is disconnected from their driving experience. The powertrain design team care about the inverter control loop delay in microseconds since a good control loop will ensure the 0 to 60 MPH eletric motor response meets customer expectations
+- **Nanoseconds**: the power module designers for the inverter care about the "reverse recovery time" of the diodes since this contributes to thermal designs and control loop limitations
+- **Picoseconds**: representing one trillionth of a second, this time scale is not relevant to the vehicles designers, except to research scientists working on fundamental research questions
