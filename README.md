@@ -56,8 +56,9 @@ In lucky cases, you are given a data dictionary. This serves as a field guide th
 - :deciduous_tree: `longitude` (*float*) = the longitude of the user in degrees.
 - :deciduous_tree: `latitude` (*float*) = the latitude of the user in degrees
 
-<sup>1</sup>the number sequence is unique, but starts with 0 for each file regardless of globally how many IDs have been produced
-<sup>2</sup>the timestamp is not recorded with timezone information. Thus is naively is local time. I know it is the Eastern timezone, though
+<sup>1</sup><sub>the number sequence is unique, but starts with 0 for each file regardless of globally how many IDs have been produced</sub>
+
+<sup>2</sup><sub>the timestamp is not recorded with timezone information. Thus is naively is local time. I know it is the Eastern timezone, though</sub>
 
 The first two columns are essentially trees we planted in the .csv version of the ride data. They may not be useful in the future, but we can keep them for now to see if there is a difference across many files. 
 
