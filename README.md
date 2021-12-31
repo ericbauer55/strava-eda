@@ -68,9 +68,16 @@ The first two columns are essentially trees we planted in the .csv version of th
 
 ### Modeling _Time_ in Data:
 
-The data Strava records is meant to model reality. Location for example is estimated using three numbers of finite precision (`elevation`, `latitude`, `longitude`). The _"when"_ of something occurring is modeled by time. We all have a general sense of what time _is_. Time is always increasing and we often count it in days, hours, minutes or seconds. How we record time numerically--and how often--depends on our needs. Let's examine these different needs through the lens of an Electric Vehicle.
+The data Strava records is meant to model reality. Location for example is estimated using three numbers of finite precision (`elevation`, `latitude`, `longitude`). The _"when"_ of something occurring is modeled by time. How we record time is dependent on the following specifications:
+
+- **Origin/Reference Point**: when comparing sequences of time, it is useful to refer to the same starting point. Time zones are the easiest way to reference a local time (e.g. 10:30 AM) across the globe.
+- **Time Scale**: the granularity of recorded time. This is based on the needs of the analysis or design.
+- **Discretization**: time is a continuous quantity, but we cannot record infinite samples so we must record a discrete point in time.
+- **Synchronicity**: when you capture discrete points in time, we can do this synchronous to a sampling frequency (time series data) or asynchronously when events occur (event series data).
 
 #### Time Scales of Interest
+We all have a general sense of what time _is_. Time is always increasing and we often count it in days, hours, minutes or seconds. How we record time numerically--and how often--depends on our needs. Let's examine these different needs through the lens of an Electric Vehicle.
+
 - **Years**: a customer needs a new car and decides to lease an electric vehicle at Company X. Marketing and Sales care about this buying cycle in years
 - **Months**: the customer needs to know how many months left are in their vehicle's lease
 - **Days**: a grocery store wants to know how many days on average the customer takes between shopping trips to better plan its EV charger infrastructure
