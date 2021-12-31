@@ -104,3 +104,12 @@ The light blue line represents the continuous state of headlamps. We cannot take
 Although an event series for the headlamp may store less redudant data, other signals for a car may require synchronous samples (e.g. speed). Even if the data is collected as a time series, it may be better to analyze certain events as an event series. For most reasonable sampling frequencies, turning a time series --> event series is relatively easy. The error you introduce from this transformation is that you is bounded between $[0, T_s/2]$ where $T_s$ is the time between samples. This error represents that you don't know exactly when the event occurred, just that it occurred between two successive samples.
 
 Constructing a time series from an event series is often trickier. For example, if we only recorded a vehicle's speed when the headlamp status changed, we might have long periods of time between samples. Trying to guess what happened to speed could be almost as bad as sampling the speed annually. 
+
+Event series are perfectly useful, however. An E-commerce website typically has no need to record every mouse movement (unless evaluating a new UX design). Recording the customer's screen state every second could generate a lot of useless data. Instead, recording what website a user came from, and the sequence of events from log-in to cart to purchase is a lot more useful.
+
+#### Strava's Model of Time
+We can see from the first couple of rows of the `time` column, that the timestamps are recorded with date (year, month, day) and time information as granular as seconds: <br>[](images/time_glance.PNG)
+
+The time intervals between rows seem to either be 1 second or 2 seconds. So even if our data are discrete points in time, they are not quite synchronous. This is something we will need to fix since we want to deal with a time series.
+
+The timescale of seconds is perfectly reasonably, though. As a bike rider with human limits, any motions I make can be described with enough detail at this timescale. The "origin" or timezone for the timestamps are naive and otherwise unclear. As the person generating the data, I can say that it is created in the Eastern timezone. Since I will only be comparing my trips, these naive timestamps are fine. It may be necessary to adjust for daylight savings in the future though. The question of when "night" begins/ends is related to this information, but perhaps we can find these historical sunsets/rises with an API.
