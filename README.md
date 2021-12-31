@@ -92,9 +92,9 @@ The initial questions and assumptions form the start of the data adventure. Thes
 3. :question: For categorical or ID columns (`track`,`segment`), how many unique values are there?
 4. :question: How can we determine speed from the available columns?
 5. :question: How can we summarize a ride similar to Strava?:
-- Elapsed time & moving time
-- Average speed
-- Elapsed distance & elevation gain/fall
+&nbsp;&nbsp;&nbsp;&nbsp;- Elapsed time & moving time
+&nbsp;&nbsp;&nbsp;&nbsp;- Average speed
+&nbsp;&nbsp;&nbsp;&nbsp;- Elapsed distance & elevation gain/fall
 6. :question: Discounting stops/starts, how can we determine the "moving average speed" of a trip?
 7. :question: How can we determine the "continuity" ride by factoring in stops and starts?
 8. :question: How can we associate out-and-back trips recorded in different Strava uploads? Should we? 
