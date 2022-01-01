@@ -119,7 +119,9 @@ To prioritize each question and assumption, we can assign each a relative "impac
 
 Items high in impact and feasibility are called "**No Brainers**". Do these first. Past a certain point if the effort is too high, or the impact too low, that item might be an "**Explore Later**". These are nice-to-haves. If the feasibility and impact are both low, then you probably don't need to address it now unless it this evaluation changes later. For a first pass at EDA, select all of the "**No Brainers**"" and a few important "**Expore Laters**". 
 
-I've attempted to prioritize my questions and assumptions here: <br>![](images/placeholder.PNG)
+
+I've attempted to prioritize my questions and assumptions here: <br>![](images/eda_priorities.jpg)
+
 
 ### Project Directory Structure:
 
